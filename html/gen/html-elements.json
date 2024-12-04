@@ -1,0 +1,50 @@
+{
+  "*": {
+    "attributes": ["id", "class"]
+  },
+  "html": {
+    "attributes": ["lang"]
+  },
+  "head": {
+    "attributes": []
+  },
+  "title": {
+    "attributes": []
+  },
+  "meta": {
+    "attributes": ["name", "content"]
+  },
+  "body": {
+    "attributes": []
+  },
+  "a": {
+    "attributes": ["href"]
+  },
+  "img": {
+    "attributes": ["src", "alt"]
+  },
+  "input": {
+    "attributes": ["type", "value"]
+  },
+  "button": {
+    "attributes": ["type"]
+  },
+  "form": {
+    "attributes": ["action"]
+  },
+  "p": {
+    "attributes": []
+  },
+  "style": {
+    "attributes": []
+  },
+  "script": {
+    "attributes": ["src"]
+  },
+  "div": {
+    "attributes": []
+  },
+  "span": {
+    "attributes": []
+  }
+}
