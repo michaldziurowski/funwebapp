@@ -15,6 +15,10 @@ func renderElem(tagName string, attrs map[string]string, children []Elem) string
 	for _, child := range children {
 		childrenHtml += child.String()
 	}
+
+	if childrenHtml == "" {
+		return fmt.Sprintf("<%s%s />", tagName, attr)
+	}
 	return fmt.Sprintf("<%[1]s%s>%s</%[1]s>", tagName, attr, childrenHtml)
 }
 
@@ -308,6 +312,14 @@ func (x *meta) Content(v string) *meta {
 		z = &meta{Attrs: map[string]string{}}
 	}
 	z.Attrs["content"] = v
+	return z
+}
+func (x *meta) Charset(v string) *meta {
+	z := x
+	if x == nil {
+		z = &meta{Attrs: map[string]string{}}
+	}
+	z.Attrs["charset"] = v
 	return z
 }
 

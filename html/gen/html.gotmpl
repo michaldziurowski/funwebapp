@@ -15,6 +15,10 @@ childrenHtml := ""
 for _, child := range children {
 childrenHtml += child.String()
 }
+
+if childrenHtml == "" {
+return fmt.Sprintf("<%s%s />", tagName, attr)
+  } 
 return fmt.Sprintf("<%[1]s%s>%s</%[1]s>", tagName, attr, childrenHtml)
 }
 

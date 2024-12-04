@@ -12,7 +12,7 @@
     "attributes": []
   },
   "meta": {
-    "attributes": ["name", "content"]
+    "attributes": ["name", "content", "charset"]
   },
   "body": {
     "attributes": []
