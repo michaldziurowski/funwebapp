@@ -24,8 +24,8 @@ return fmt.Sprintf("<%[1]s%s>%s</%[1]s>", tagName, attr, childrenHtml)
 
 type Text string
 
-func (x *Text) String() string {
-  return string(*x)
+func (x Text) String() string {
+  return string(x)
 }
 
 {{ range $key, $value := . }}

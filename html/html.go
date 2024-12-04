@@ -24,8 +24,8 @@ func renderElem(tagName string, attrs map[string]string, children []Elem) string
 
 type Text string
 
-func (x *Text) String() string {
-	return string(*x)
+func (x Text) String() string {
+	return string(x)
 }
 
 type a struct {
@@ -275,6 +275,43 @@ func (x *input) Value(v string) *input {
 		z = &input{Attrs: map[string]string{}}
 	}
 	z.Attrs["value"] = v
+	return z
+}
+
+type link struct {
+	Attrs    map[string]string
+	Children []Elem
+}
+
+var Link *link
+
+func (x *link) String() string {
+	return renderElem("link", x.Attrs, x.Children)
+}
+
+func (x *link) C(e ...Elem) *link {
+	z := x
+	if x == nil {
+		z = &link{Attrs: map[string]string{}}
+	}
+	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *link) Rel(v string) *link {
+	z := x
+	if x == nil {
+		z = &link{Attrs: map[string]string{}}
+	}
+	z.Attrs["rel"] = v
+	return z
+}
+func (x *link) Href(v string) *link {
+	z := x
+	if x == nil {
+		z = &link{Attrs: map[string]string{}}
+	}
+	z.Attrs["href"] = v
 	return z
 }
 
