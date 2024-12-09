@@ -17,15 +17,17 @@ func main() {
 		panic(err)
 	}
 
-	f := map[string]Element{}
+	f := map[string]*Element{}
 	err = json.Unmarshal(content, &f)
 	if err != nil {
 		panic(err)
 	}
 
-	for _, v := range f {
-		for _, av := range f["*"].Attributes {
-			v.Attributes = append(v.Attributes, av)
+	for k, v := range f {
+		if k != "*" {
+			for _, av := range f["*"].Attributes {
+				v.Attributes = append(v.Attributes, av)
+			}
 		}
 	}
 

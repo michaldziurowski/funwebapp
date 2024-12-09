@@ -56,6 +56,22 @@ func (x *a) Href(v string) *a {
 	z.Attrs["href"] = v
 	return z
 }
+func (x *a) Id(v string) *a {
+	z := x
+	if x == nil {
+		z = &a{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *a) Class(v string) *a {
+	z := x
+	if x == nil {
+		z = &a{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type body struct {
 	Attrs    map[string]string
@@ -74,6 +90,23 @@ func (x *body) C(e ...Elem) *body {
 		z = &body{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *body) Id(v string) *body {
+	z := x
+	if x == nil {
+		z = &body{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *body) Class(v string) *body {
+	z := x
+	if x == nil {
+		z = &body{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -105,6 +138,22 @@ func (x *button) Type(v string) *button {
 	z.Attrs["type"] = v
 	return z
 }
+func (x *button) Id(v string) *button {
+	z := x
+	if x == nil {
+		z = &button{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *button) Class(v string) *button {
+	z := x
+	if x == nil {
+		z = &button{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type div struct {
 	Attrs    map[string]string
@@ -123,6 +172,23 @@ func (x *div) C(e ...Elem) *div {
 		z = &div{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *div) Id(v string) *div {
+	z := x
+	if x == nil {
+		z = &div{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *div) Class(v string) *div {
+	z := x
+	if x == nil {
+		z = &div{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -154,6 +220,22 @@ func (x *form) Action(v string) *form {
 	z.Attrs["action"] = v
 	return z
 }
+func (x *form) Id(v string) *form {
+	z := x
+	if x == nil {
+		z = &form{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *form) Class(v string) *form {
+	z := x
+	if x == nil {
+		z = &form{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type head struct {
 	Attrs    map[string]string
@@ -172,6 +254,23 @@ func (x *head) C(e ...Elem) *head {
 		z = &head{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *head) Id(v string) *head {
+	z := x
+	if x == nil {
+		z = &head{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *head) Class(v string) *head {
+	z := x
+	if x == nil {
+		z = &head{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -201,6 +300,22 @@ func (x *html) Lang(v string) *html {
 		z = &html{Attrs: map[string]string{}}
 	}
 	z.Attrs["lang"] = v
+	return z
+}
+func (x *html) Id(v string) *html {
+	z := x
+	if x == nil {
+		z = &html{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *html) Class(v string) *html {
+	z := x
+	if x == nil {
+		z = &html{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -240,6 +355,22 @@ func (x *img) Alt(v string) *img {
 	z.Attrs["alt"] = v
 	return z
 }
+func (x *img) Id(v string) *img {
+	z := x
+	if x == nil {
+		z = &img{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *img) Class(v string) *img {
+	z := x
+	if x == nil {
+		z = &img{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type input struct {
 	Attrs    map[string]string
@@ -277,6 +408,22 @@ func (x *input) Value(v string) *input {
 	z.Attrs["value"] = v
 	return z
 }
+func (x *input) Id(v string) *input {
+	z := x
+	if x == nil {
+		z = &input{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *input) Class(v string) *input {
+	z := x
+	if x == nil {
+		z = &input{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type li struct {
 	Attrs    map[string]string
@@ -295,6 +442,23 @@ func (x *li) C(e ...Elem) *li {
 		z = &li{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *li) Id(v string) *li {
+	z := x
+	if x == nil {
+		z = &li{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *li) Class(v string) *li {
+	z := x
+	if x == nil {
+		z = &li{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -334,6 +498,22 @@ func (x *link) Href(v string) *link {
 	z.Attrs["href"] = v
 	return z
 }
+func (x *link) Id(v string) *link {
+	z := x
+	if x == nil {
+		z = &link{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *link) Class(v string) *link {
+	z := x
+	if x == nil {
+		z = &link{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type main struct {
 	Attrs    map[string]string
@@ -352,6 +532,23 @@ func (x *main) C(e ...Elem) *main {
 		z = &main{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *main) Id(v string) *main {
+	z := x
+	if x == nil {
+		z = &main{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *main) Class(v string) *main {
+	z := x
+	if x == nil {
+		z = &main{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -399,6 +596,22 @@ func (x *meta) Charset(v string) *meta {
 	z.Attrs["charset"] = v
 	return z
 }
+func (x *meta) Id(v string) *meta {
+	z := x
+	if x == nil {
+		z = &meta{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *meta) Class(v string) *meta {
+	z := x
+	if x == nil {
+		z = &meta{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type p struct {
 	Attrs    map[string]string
@@ -417,6 +630,23 @@ func (x *p) C(e ...Elem) *p {
 		z = &p{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *p) Id(v string) *p {
+	z := x
+	if x == nil {
+		z = &p{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *p) Class(v string) *p {
+	z := x
+	if x == nil {
+		z = &p{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -448,6 +678,22 @@ func (x *script) Src(v string) *script {
 	z.Attrs["src"] = v
 	return z
 }
+func (x *script) Id(v string) *script {
+	z := x
+	if x == nil {
+		z = &script{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *script) Class(v string) *script {
+	z := x
+	if x == nil {
+		z = &script{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
 
 type span struct {
 	Attrs    map[string]string
@@ -466,6 +712,23 @@ func (x *span) C(e ...Elem) *span {
 		z = &span{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *span) Id(v string) *span {
+	z := x
+	if x == nil {
+		z = &span{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *span) Class(v string) *span {
+	z := x
+	if x == nil {
+		z = &span{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
 
@@ -489,6 +752,23 @@ func (x *style) C(e ...Elem) *style {
 	return z
 }
 
+func (x *style) Id(v string) *style {
+	z := x
+	if x == nil {
+		z = &style{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *style) Class(v string) *style {
+	z := x
+	if x == nil {
+		z = &style{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
+
 type title struct {
 	Attrs    map[string]string
 	Children []Elem
@@ -509,6 +789,23 @@ func (x *title) C(e ...Elem) *title {
 	return z
 }
 
+func (x *title) Id(v string) *title {
+	z := x
+	if x == nil {
+		z = &title{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *title) Class(v string) *title {
+	z := x
+	if x == nil {
+		z = &title{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
+
 type ul struct {
 	Attrs    map[string]string
 	Children []Elem
@@ -526,5 +823,22 @@ func (x *ul) C(e ...Elem) *ul {
 		z = &ul{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *ul) Id(v string) *ul {
+	z := x
+	if x == nil {
+		z = &ul{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *ul) Class(v string) *ul {
+	z := x
+	if x == nil {
+		z = &ul{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
 	return z
 }
