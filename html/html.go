@@ -613,6 +613,43 @@ func (x *meta) Class(v string) *meta {
 	return z
 }
 
+type nav struct {
+	Attrs    map[string]string
+	Children []Elem
+}
+
+var Nav *nav
+
+func (x *nav) String() string {
+	return renderElem("nav", x.Attrs, x.Children)
+}
+
+func (x *nav) C(e ...Elem) *nav {
+	z := x
+	if x == nil {
+		z = &nav{Attrs: map[string]string{}}
+	}
+	z.Children = append(z.Children, e...)
+	return z
+}
+
+func (x *nav) Id(v string) *nav {
+	z := x
+	if x == nil {
+		z = &nav{Attrs: map[string]string{}}
+	}
+	z.Attrs["id"] = v
+	return z
+}
+func (x *nav) Class(v string) *nav {
+	z := x
+	if x == nil {
+		z = &nav{Attrs: map[string]string{}}
+	}
+	z.Attrs["class"] = v
+	return z
+}
+
 type p struct {
 	Attrs    map[string]string
 	Children []Elem
