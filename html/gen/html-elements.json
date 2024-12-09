@@ -20,6 +20,9 @@
   "body": {
     "attributes": []
   },
+  "main": {
+    "attributes": []
+  },
   "a": {
     "attributes": ["href"]
   },
@@ -48,6 +51,12 @@
     "attributes": []
   },
   "span": {
+    "attributes": []
+  },
+  "ul": {
+    "attributes": []
+  },
+  "li": {
     "attributes": []
   }
 }

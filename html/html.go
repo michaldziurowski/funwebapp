@@ -278,6 +278,26 @@ func (x *input) Value(v string) *input {
 	return z
 }
 
+type li struct {
+	Attrs    map[string]string
+	Children []Elem
+}
+
+var Li *li
+
+func (x *li) String() string {
+	return renderElem("li", x.Attrs, x.Children)
+}
+
+func (x *li) C(e ...Elem) *li {
+	z := x
+	if x == nil {
+		z = &li{Attrs: map[string]string{}}
+	}
+	z.Children = append(z.Children, e...)
+	return z
+}
+
 type link struct {
 	Attrs    map[string]string
 	Children []Elem
@@ -312,6 +332,26 @@ func (x *link) Href(v string) *link {
 		z = &link{Attrs: map[string]string{}}
 	}
 	z.Attrs["href"] = v
+	return z
+}
+
+type main struct {
+	Attrs    map[string]string
+	Children []Elem
+}
+
+var Main *main
+
+func (x *main) String() string {
+	return renderElem("main", x.Attrs, x.Children)
+}
+
+func (x *main) C(e ...Elem) *main {
+	z := x
+	if x == nil {
+		z = &main{Attrs: map[string]string{}}
+	}
+	z.Children = append(z.Children, e...)
 	return z
 }
 
@@ -464,6 +504,26 @@ func (x *title) C(e ...Elem) *title {
 	z := x
 	if x == nil {
 		z = &title{Attrs: map[string]string{}}
+	}
+	z.Children = append(z.Children, e...)
+	return z
+}
+
+type ul struct {
+	Attrs    map[string]string
+	Children []Elem
+}
+
+var Ul *ul
+
+func (x *ul) String() string {
+	return renderElem("ul", x.Attrs, x.Children)
+}
+
+func (x *ul) C(e ...Elem) *ul {
+	z := x
+	if x == nil {
+		z = &ul{Attrs: map[string]string{}}
 	}
 	z.Children = append(z.Children, e...)
 	return z
