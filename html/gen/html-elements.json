@@ -30,7 +30,7 @@
     "attributes": ["src", "alt"]
   },
   "input": {
-    "attributes": ["type", "value"]
+    "attributes": ["type", "value", "name"]
   },
   "button": {
     "attributes": ["type"]
@@ -61,5 +61,32 @@
   },
   "nav": {
     "attributes": []
+  },
+  "header": {
+    "attributes": []
+  },
+  "footer": {
+    "attributes": []
+  },
+  "section": {
+    "attributes": []
+  },
+  "article": {
+    "attributes": []
+  },
+  "details": {
+    "attributes": []
+  },
+  "summary": {
+    "attributes": []
+  },
+  "select": {
+    "attributes": ["name"]
+  },
+  "option": {
+    "attributes": []
+  },
+  "label": {
+    "attributes": ["for"]
   }
 }

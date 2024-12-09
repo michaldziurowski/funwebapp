@@ -30,33 +30,33 @@ func (x Text) String() string {
 
 {{ range $key, $value := . }}
 {{if ne $key "*"}}
-type {{ $key }} struct {
-Attrs map[string]string
-Children []Elem
+type elem{{ $key }} struct {
+attrs map[string]string
+children []Elem
 }
 
-var {{ title $key }} *{{ $key }}
+var {{ title $key }} *elem{{ $key }}
 
-func (x *{{$key}}) String() string {
-  return renderElem("{{$key}}", x.Attrs, x.Children)
+func (x *elem{{$key}}) String() string {
+  return renderElem("{{$key}}", x.attrs, x.children)
 }
 
-func (x *{{ $key }}) C(e ...Elem) *{{ $key }}{
+func (x *elem{{ $key }}) C(e ...Elem) *elem{{ $key }}{
   z := x
   if x == nil {
-    z = &{{ $key }}{Attrs: map[string]string{}}
+    z = &elem{{ $key }}{attrs: map[string]string{}}
   }
-  z.Children = append(z.Children, e...)
+  z.children = append(z.children, e...)
   return z
 }
 
 {{ range $aidx, $akey := $value.Attributes -}}
-func (x *{{ $key }}) {{ removedash $akey | title }}(v string) *{{ $key }} {
+func (x *elem{{ $key }}) {{ removedash $akey | title }}(v string) *elem{{ $key }} {
   z := x
   if x == nil {
-    z = &{{ $key }}{Attrs: map[string]string{}}
+    z = &elem{{ $key }}{attrs: map[string]string{}}
   }
-  z.Attrs["{{ $akey }}"] = v
+  z.attrs["{{ $akey }}"] = v
   return z 
 }
 {{ end }}

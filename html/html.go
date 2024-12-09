@@ -28,854 +28,1211 @@ func (x Text) String() string {
 	return string(x)
 }
 
-type a struct {
-	Attrs    map[string]string
-	Children []Elem
+type elema struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var A *a
+var A *elema
 
-func (x *a) String() string {
-	return renderElem("a", x.Attrs, x.Children)
+func (x *elema) String() string {
+	return renderElem("a", x.attrs, x.children)
 }
 
-func (x *a) C(e ...Elem) *a {
+func (x *elema) C(e ...Elem) *elema {
 	z := x
 	if x == nil {
-		z = &a{Attrs: map[string]string{}}
+		z = &elema{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *a) Href(v string) *a {
+func (x *elema) Href(v string) *elema {
 	z := x
 	if x == nil {
-		z = &a{Attrs: map[string]string{}}
+		z = &elema{attrs: map[string]string{}}
 	}
-	z.Attrs["href"] = v
+	z.attrs["href"] = v
 	return z
 }
-func (x *a) Id(v string) *a {
+func (x *elema) Id(v string) *elema {
 	z := x
 	if x == nil {
-		z = &a{Attrs: map[string]string{}}
+		z = &elema{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *a) Class(v string) *a {
+func (x *elema) Class(v string) *elema {
 	z := x
 	if x == nil {
-		z = &a{Attrs: map[string]string{}}
+		z = &elema{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type body struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemarticle struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Body *body
+var Article *elemarticle
 
-func (x *body) String() string {
-	return renderElem("body", x.Attrs, x.Children)
+func (x *elemarticle) String() string {
+	return renderElem("article", x.attrs, x.children)
 }
 
-func (x *body) C(e ...Elem) *body {
+func (x *elemarticle) C(e ...Elem) *elemarticle {
 	z := x
 	if x == nil {
-		z = &body{Attrs: map[string]string{}}
+		z = &elemarticle{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *body) Id(v string) *body {
+func (x *elemarticle) Id(v string) *elemarticle {
 	z := x
 	if x == nil {
-		z = &body{Attrs: map[string]string{}}
+		z = &elemarticle{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *body) Class(v string) *body {
+func (x *elemarticle) Class(v string) *elemarticle {
 	z := x
 	if x == nil {
-		z = &body{Attrs: map[string]string{}}
+		z = &elemarticle{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type button struct {
-	Attrs    map[string]string
-	Children []Elem
+type elembody struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Button *button
+var Body *elembody
 
-func (x *button) String() string {
-	return renderElem("button", x.Attrs, x.Children)
+func (x *elembody) String() string {
+	return renderElem("body", x.attrs, x.children)
 }
 
-func (x *button) C(e ...Elem) *button {
+func (x *elembody) C(e ...Elem) *elembody {
 	z := x
 	if x == nil {
-		z = &button{Attrs: map[string]string{}}
+		z = &elembody{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *button) Type(v string) *button {
+func (x *elembody) Id(v string) *elembody {
 	z := x
 	if x == nil {
-		z = &button{Attrs: map[string]string{}}
+		z = &elembody{attrs: map[string]string{}}
 	}
-	z.Attrs["type"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *button) Id(v string) *button {
+func (x *elembody) Class(v string) *elembody {
 	z := x
 	if x == nil {
-		z = &button{Attrs: map[string]string{}}
+		z = &elembody{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["class"] = v
 	return z
 }
-func (x *button) Class(v string) *button {
+
+type elembutton struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var Button *elembutton
+
+func (x *elembutton) String() string {
+	return renderElem("button", x.attrs, x.children)
+}
+
+func (x *elembutton) C(e ...Elem) *elembutton {
+	z := x
+	if x == nil {
+		z = &elembutton{attrs: map[string]string{}}
+	}
+	z.children = append(z.children, e...)
+	return z
+}
+
+func (x *elembutton) Type(v string) *elembutton {
+	z := x
+	if x == nil {
+		z = &elembutton{attrs: map[string]string{}}
+	}
+	z.attrs["type"] = v
+	return z
+}
+func (x *elembutton) Id(v string) *elembutton {
+	z := x
+	if x == nil {
+		z = &elembutton{attrs: map[string]string{}}
+	}
+	z.attrs["id"] = v
+	return z
+}
+func (x *elembutton) Class(v string) *elembutton {
+	z := x
+	if x == nil {
+		z = &elembutton{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
+
+type elemdetails struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var Details *elemdetails
+
+func (x *elemdetails) String() string {
+	return renderElem("details", x.attrs, x.children)
+}
+
+func (x *elemdetails) C(e ...Elem) *elemdetails {
+	z := x
+	if x == nil {
+		z = &elemdetails{attrs: map[string]string{}}
+	}
+	z.children = append(z.children, e...)
+	return z
+}
+
+func (x *elemdetails) Id(v string) *elemdetails {
+	z := x
+	if x == nil {
+		z = &elemdetails{attrs: map[string]string{}}
+	}
+	z.attrs["id"] = v
+	return z
+}
+func (x *elemdetails) Class(v string) *elemdetails {
+	z := x
+	if x == nil {
+		z = &elemdetails{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
+
+type elemdiv struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var Div *elemdiv
+
+func (x *elemdiv) String() string {
+	return renderElem("div", x.attrs, x.children)
+}
+
+func (x *elemdiv) C(e ...Elem) *elemdiv {
+	z := x
+	if x == nil {
+		z = &elemdiv{attrs: map[string]string{}}
+	}
+	z.children = append(z.children, e...)
+	return z
+}
+
+func (x *elemdiv) Id(v string) *elemdiv {
+	z := x
+	if x == nil {
+		z = &elemdiv{attrs: map[string]string{}}
+	}
+	z.attrs["id"] = v
+	return z
+}
+func (x *elemdiv) Class(v string) *elemdiv {
+	z := x
+	if x == nil {
+		z = &elemdiv{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
+
+type elemfooter struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var Footer *elemfooter
+
+func (x *elemfooter) String() string {
+	return renderElem("footer", x.attrs, x.children)
+}
+
+func (x *elemfooter) C(e ...Elem) *elemfooter {
+	z := x
+	if x == nil {
+		z = &elemfooter{attrs: map[string]string{}}
+	}
+	z.children = append(z.children, e...)
+	return z
+}
+
+func (x *elemfooter) Id(v string) *elemfooter {
+	z := x
+	if x == nil {
+		z = &elemfooter{attrs: map[string]string{}}
+	}
+	z.attrs["id"] = v
+	return z
+}
+func (x *elemfooter) Class(v string) *elemfooter {
+	z := x
+	if x == nil {
+		z = &elemfooter{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
+
+type elemform struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var Form *elemform
+
+func (x *elemform) String() string {
+	return renderElem("form", x.attrs, x.children)
+}
+
+func (x *elemform) C(e ...Elem) *elemform {
+	z := x
+	if x == nil {
+		z = &elemform{attrs: map[string]string{}}
+	}
+	z.children = append(z.children, e...)
+	return z
+}
+
+func (x *elemform) Action(v string) *elemform {
+	z := x
+	if x == nil {
+		z = &elemform{attrs: map[string]string{}}
+	}
+	z.attrs["action"] = v
+	return z
+}
+func (x *elemform) Id(v string) *elemform {
+	z := x
+	if x == nil {
+		z = &elemform{attrs: map[string]string{}}
+	}
+	z.attrs["id"] = v
+	return z
+}
+func (x *elemform) Class(v string) *elemform {
+	z := x
+	if x == nil {
+		z = &elemform{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
+
+type elemhead struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var Head *elemhead
+
+func (x *elemhead) String() string {
+	return renderElem("head", x.attrs, x.children)
+}
+
+func (x *elemhead) C(e ...Elem) *elemhead {
+	z := x
+	if x == nil {
+		z = &elemhead{attrs: map[string]string{}}
+	}
+	z.children = append(z.children, e...)
+	return z
+}
+
+func (x *elemhead) Id(v string) *elemhead {
 	z := x
 	if x == nil {
-		z = &button{Attrs: map[string]string{}}
+		z = &elemhead{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["id"] = v
 	return z
 }
+func (x *elemhead) Class(v string) *elemhead {
+	z := x
+	if x == nil {
+		z = &elemhead{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
 
-type div struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemheader struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Div *div
+var Header *elemheader
 
-func (x *div) String() string {
-	return renderElem("div", x.Attrs, x.Children)
+func (x *elemheader) String() string {
+	return renderElem("header", x.attrs, x.children)
 }
 
-func (x *div) C(e ...Elem) *div {
+func (x *elemheader) C(e ...Elem) *elemheader {
 	z := x
 	if x == nil {
-		z = &div{Attrs: map[string]string{}}
+		z = &elemheader{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *div) Id(v string) *div {
+func (x *elemheader) Id(v string) *elemheader {
 	z := x
 	if x == nil {
-		z = &div{Attrs: map[string]string{}}
+		z = &elemheader{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *div) Class(v string) *div {
+func (x *elemheader) Class(v string) *elemheader {
 	z := x
 	if x == nil {
-		z = &div{Attrs: map[string]string{}}
+		z = &elemheader{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type form struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemhtml struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Form *form
+var Html *elemhtml
 
-func (x *form) String() string {
-	return renderElem("form", x.Attrs, x.Children)
+func (x *elemhtml) String() string {
+	return renderElem("html", x.attrs, x.children)
 }
 
-func (x *form) C(e ...Elem) *form {
+func (x *elemhtml) C(e ...Elem) *elemhtml {
 	z := x
 	if x == nil {
-		z = &form{Attrs: map[string]string{}}
+		z = &elemhtml{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *form) Action(v string) *form {
+func (x *elemhtml) Lang(v string) *elemhtml {
 	z := x
 	if x == nil {
-		z = &form{Attrs: map[string]string{}}
+		z = &elemhtml{attrs: map[string]string{}}
 	}
-	z.Attrs["action"] = v
+	z.attrs["lang"] = v
 	return z
 }
-func (x *form) Id(v string) *form {
+func (x *elemhtml) Id(v string) *elemhtml {
 	z := x
 	if x == nil {
-		z = &form{Attrs: map[string]string{}}
+		z = &elemhtml{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *form) Class(v string) *form {
+func (x *elemhtml) Class(v string) *elemhtml {
 	z := x
 	if x == nil {
-		z = &form{Attrs: map[string]string{}}
+		z = &elemhtml{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type head struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemimg struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Head *head
+var Img *elemimg
 
-func (x *head) String() string {
-	return renderElem("head", x.Attrs, x.Children)
+func (x *elemimg) String() string {
+	return renderElem("img", x.attrs, x.children)
 }
 
-func (x *head) C(e ...Elem) *head {
+func (x *elemimg) C(e ...Elem) *elemimg {
 	z := x
 	if x == nil {
-		z = &head{Attrs: map[string]string{}}
+		z = &elemimg{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *head) Id(v string) *head {
+func (x *elemimg) Src(v string) *elemimg {
+	z := x
+	if x == nil {
+		z = &elemimg{attrs: map[string]string{}}
+	}
+	z.attrs["src"] = v
+	return z
+}
+func (x *elemimg) Alt(v string) *elemimg {
+	z := x
+	if x == nil {
+		z = &elemimg{attrs: map[string]string{}}
+	}
+	z.attrs["alt"] = v
+	return z
+}
+func (x *elemimg) Id(v string) *elemimg {
 	z := x
 	if x == nil {
-		z = &head{Attrs: map[string]string{}}
+		z = &elemimg{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *head) Class(v string) *head {
+func (x *elemimg) Class(v string) *elemimg {
 	z := x
 	if x == nil {
-		z = &head{Attrs: map[string]string{}}
+		z = &elemimg{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type html struct {
-	Attrs    map[string]string
-	Children []Elem
+type eleminput struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Html *html
+var Input *eleminput
 
-func (x *html) String() string {
-	return renderElem("html", x.Attrs, x.Children)
+func (x *eleminput) String() string {
+	return renderElem("input", x.attrs, x.children)
 }
 
-func (x *html) C(e ...Elem) *html {
+func (x *eleminput) C(e ...Elem) *eleminput {
 	z := x
 	if x == nil {
-		z = &html{Attrs: map[string]string{}}
+		z = &eleminput{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *html) Lang(v string) *html {
+func (x *eleminput) Type(v string) *eleminput {
+	z := x
+	if x == nil {
+		z = &eleminput{attrs: map[string]string{}}
+	}
+	z.attrs["type"] = v
+	return z
+}
+func (x *eleminput) Value(v string) *eleminput {
 	z := x
 	if x == nil {
-		z = &html{Attrs: map[string]string{}}
+		z = &eleminput{attrs: map[string]string{}}
 	}
-	z.Attrs["lang"] = v
+	z.attrs["value"] = v
 	return z
 }
-func (x *html) Id(v string) *html {
+func (x *eleminput) Name(v string) *eleminput {
 	z := x
 	if x == nil {
-		z = &html{Attrs: map[string]string{}}
+		z = &eleminput{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["name"] = v
 	return z
 }
-func (x *html) Class(v string) *html {
+func (x *eleminput) Id(v string) *eleminput {
 	z := x
 	if x == nil {
-		z = &html{Attrs: map[string]string{}}
+		z = &eleminput{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["id"] = v
 	return z
 }
+func (x *eleminput) Class(v string) *eleminput {
+	z := x
+	if x == nil {
+		z = &eleminput{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
 
-type img struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemlabel struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Img *img
+var Label *elemlabel
 
-func (x *img) String() string {
-	return renderElem("img", x.Attrs, x.Children)
+func (x *elemlabel) String() string {
+	return renderElem("label", x.attrs, x.children)
 }
 
-func (x *img) C(e ...Elem) *img {
+func (x *elemlabel) C(e ...Elem) *elemlabel {
 	z := x
 	if x == nil {
-		z = &img{Attrs: map[string]string{}}
+		z = &elemlabel{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *img) Src(v string) *img {
+func (x *elemlabel) For(v string) *elemlabel {
+	z := x
+	if x == nil {
+		z = &elemlabel{attrs: map[string]string{}}
+	}
+	z.attrs["for"] = v
+	return z
+}
+func (x *elemlabel) Id(v string) *elemlabel {
+	z := x
+	if x == nil {
+		z = &elemlabel{attrs: map[string]string{}}
+	}
+	z.attrs["id"] = v
+	return z
+}
+func (x *elemlabel) Class(v string) *elemlabel {
 	z := x
 	if x == nil {
-		z = &img{Attrs: map[string]string{}}
+		z = &elemlabel{attrs: map[string]string{}}
 	}
-	z.Attrs["src"] = v
+	z.attrs["class"] = v
 	return z
+}
+
+type elemli struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var Li *elemli
+
+func (x *elemli) String() string {
+	return renderElem("li", x.attrs, x.children)
 }
-func (x *img) Alt(v string) *img {
+
+func (x *elemli) C(e ...Elem) *elemli {
 	z := x
 	if x == nil {
-		z = &img{Attrs: map[string]string{}}
+		z = &elemli{attrs: map[string]string{}}
 	}
-	z.Attrs["alt"] = v
+	z.children = append(z.children, e...)
 	return z
 }
-func (x *img) Id(v string) *img {
+
+func (x *elemli) Id(v string) *elemli {
 	z := x
 	if x == nil {
-		z = &img{Attrs: map[string]string{}}
+		z = &elemli{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *img) Class(v string) *img {
+func (x *elemli) Class(v string) *elemli {
 	z := x
 	if x == nil {
-		z = &img{Attrs: map[string]string{}}
+		z = &elemli{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type input struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemlink struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Input *input
+var Link *elemlink
 
-func (x *input) String() string {
-	return renderElem("input", x.Attrs, x.Children)
+func (x *elemlink) String() string {
+	return renderElem("link", x.attrs, x.children)
 }
 
-func (x *input) C(e ...Elem) *input {
+func (x *elemlink) C(e ...Elem) *elemlink {
 	z := x
 	if x == nil {
-		z = &input{Attrs: map[string]string{}}
+		z = &elemlink{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *input) Type(v string) *input {
+func (x *elemlink) Rel(v string) *elemlink {
 	z := x
 	if x == nil {
-		z = &input{Attrs: map[string]string{}}
+		z = &elemlink{attrs: map[string]string{}}
 	}
-	z.Attrs["type"] = v
+	z.attrs["rel"] = v
 	return z
 }
-func (x *input) Value(v string) *input {
+func (x *elemlink) Href(v string) *elemlink {
 	z := x
 	if x == nil {
-		z = &input{Attrs: map[string]string{}}
+		z = &elemlink{attrs: map[string]string{}}
 	}
-	z.Attrs["value"] = v
+	z.attrs["href"] = v
 	return z
 }
-func (x *input) Id(v string) *input {
+func (x *elemlink) Id(v string) *elemlink {
 	z := x
 	if x == nil {
-		z = &input{Attrs: map[string]string{}}
+		z = &elemlink{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *input) Class(v string) *input {
+func (x *elemlink) Class(v string) *elemlink {
 	z := x
 	if x == nil {
-		z = &input{Attrs: map[string]string{}}
+		z = &elemlink{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type li struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemmain struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Li *li
+var Main *elemmain
 
-func (x *li) String() string {
-	return renderElem("li", x.Attrs, x.Children)
+func (x *elemmain) String() string {
+	return renderElem("main", x.attrs, x.children)
 }
 
-func (x *li) C(e ...Elem) *li {
+func (x *elemmain) C(e ...Elem) *elemmain {
 	z := x
 	if x == nil {
-		z = &li{Attrs: map[string]string{}}
+		z = &elemmain{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *li) Id(v string) *li {
+func (x *elemmain) Id(v string) *elemmain {
 	z := x
 	if x == nil {
-		z = &li{Attrs: map[string]string{}}
+		z = &elemmain{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *li) Class(v string) *li {
+func (x *elemmain) Class(v string) *elemmain {
 	z := x
 	if x == nil {
-		z = &li{Attrs: map[string]string{}}
+		z = &elemmain{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type link struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemmeta struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Link *link
+var Meta *elemmeta
 
-func (x *link) String() string {
-	return renderElem("link", x.Attrs, x.Children)
+func (x *elemmeta) String() string {
+	return renderElem("meta", x.attrs, x.children)
 }
 
-func (x *link) C(e ...Elem) *link {
+func (x *elemmeta) C(e ...Elem) *elemmeta {
 	z := x
 	if x == nil {
-		z = &link{Attrs: map[string]string{}}
+		z = &elemmeta{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *link) Rel(v string) *link {
+func (x *elemmeta) Name(v string) *elemmeta {
+	z := x
+	if x == nil {
+		z = &elemmeta{attrs: map[string]string{}}
+	}
+	z.attrs["name"] = v
+	return z
+}
+func (x *elemmeta) Content(v string) *elemmeta {
 	z := x
 	if x == nil {
-		z = &link{Attrs: map[string]string{}}
+		z = &elemmeta{attrs: map[string]string{}}
 	}
-	z.Attrs["rel"] = v
+	z.attrs["content"] = v
 	return z
 }
-func (x *link) Href(v string) *link {
+func (x *elemmeta) Charset(v string) *elemmeta {
 	z := x
 	if x == nil {
-		z = &link{Attrs: map[string]string{}}
+		z = &elemmeta{attrs: map[string]string{}}
 	}
-	z.Attrs["href"] = v
+	z.attrs["charset"] = v
 	return z
 }
-func (x *link) Id(v string) *link {
+func (x *elemmeta) Id(v string) *elemmeta {
 	z := x
 	if x == nil {
-		z = &link{Attrs: map[string]string{}}
+		z = &elemmeta{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *link) Class(v string) *link {
+func (x *elemmeta) Class(v string) *elemmeta {
 	z := x
 	if x == nil {
-		z = &link{Attrs: map[string]string{}}
+		z = &elemmeta{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type main struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemnav struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Main *main
+var Nav *elemnav
 
-func (x *main) String() string {
-	return renderElem("main", x.Attrs, x.Children)
+func (x *elemnav) String() string {
+	return renderElem("nav", x.attrs, x.children)
 }
 
-func (x *main) C(e ...Elem) *main {
+func (x *elemnav) C(e ...Elem) *elemnav {
 	z := x
 	if x == nil {
-		z = &main{Attrs: map[string]string{}}
+		z = &elemnav{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *main) Id(v string) *main {
+func (x *elemnav) Id(v string) *elemnav {
 	z := x
 	if x == nil {
-		z = &main{Attrs: map[string]string{}}
+		z = &elemnav{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *main) Class(v string) *main {
+func (x *elemnav) Class(v string) *elemnav {
 	z := x
 	if x == nil {
-		z = &main{Attrs: map[string]string{}}
+		z = &elemnav{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type meta struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemoption struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Meta *meta
+var Option *elemoption
 
-func (x *meta) String() string {
-	return renderElem("meta", x.Attrs, x.Children)
+func (x *elemoption) String() string {
+	return renderElem("option", x.attrs, x.children)
 }
 
-func (x *meta) C(e ...Elem) *meta {
+func (x *elemoption) C(e ...Elem) *elemoption {
 	z := x
 	if x == nil {
-		z = &meta{Attrs: map[string]string{}}
+		z = &elemoption{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *meta) Name(v string) *meta {
+func (x *elemoption) Id(v string) *elemoption {
 	z := x
 	if x == nil {
-		z = &meta{Attrs: map[string]string{}}
+		z = &elemoption{attrs: map[string]string{}}
 	}
-	z.Attrs["name"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *meta) Content(v string) *meta {
+func (x *elemoption) Class(v string) *elemoption {
 	z := x
 	if x == nil {
-		z = &meta{Attrs: map[string]string{}}
+		z = &elemoption{attrs: map[string]string{}}
 	}
-	z.Attrs["content"] = v
+	z.attrs["class"] = v
 	return z
 }
-func (x *meta) Charset(v string) *meta {
+
+type elemp struct {
+	attrs    map[string]string
+	children []Elem
+}
+
+var P *elemp
+
+func (x *elemp) String() string {
+	return renderElem("p", x.attrs, x.children)
+}
+
+func (x *elemp) C(e ...Elem) *elemp {
 	z := x
 	if x == nil {
-		z = &meta{Attrs: map[string]string{}}
+		z = &elemp{attrs: map[string]string{}}
 	}
-	z.Attrs["charset"] = v
+	z.children = append(z.children, e...)
 	return z
 }
-func (x *meta) Id(v string) *meta {
+
+func (x *elemp) Id(v string) *elemp {
 	z := x
 	if x == nil {
-		z = &meta{Attrs: map[string]string{}}
+		z = &elemp{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *meta) Class(v string) *meta {
+func (x *elemp) Class(v string) *elemp {
 	z := x
 	if x == nil {
-		z = &meta{Attrs: map[string]string{}}
+		z = &elemp{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type nav struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemscript struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Nav *nav
+var Script *elemscript
 
-func (x *nav) String() string {
-	return renderElem("nav", x.Attrs, x.Children)
+func (x *elemscript) String() string {
+	return renderElem("script", x.attrs, x.children)
 }
 
-func (x *nav) C(e ...Elem) *nav {
+func (x *elemscript) C(e ...Elem) *elemscript {
 	z := x
 	if x == nil {
-		z = &nav{Attrs: map[string]string{}}
+		z = &elemscript{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *nav) Id(v string) *nav {
+func (x *elemscript) Src(v string) *elemscript {
 	z := x
 	if x == nil {
-		z = &nav{Attrs: map[string]string{}}
+		z = &elemscript{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["src"] = v
 	return z
 }
-func (x *nav) Class(v string) *nav {
+func (x *elemscript) Id(v string) *elemscript {
 	z := x
 	if x == nil {
-		z = &nav{Attrs: map[string]string{}}
+		z = &elemscript{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["id"] = v
 	return z
 }
+func (x *elemscript) Class(v string) *elemscript {
+	z := x
+	if x == nil {
+		z = &elemscript{attrs: map[string]string{}}
+	}
+	z.attrs["class"] = v
+	return z
+}
 
-type p struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemsection struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var P *p
+var Section *elemsection
 
-func (x *p) String() string {
-	return renderElem("p", x.Attrs, x.Children)
+func (x *elemsection) String() string {
+	return renderElem("section", x.attrs, x.children)
 }
 
-func (x *p) C(e ...Elem) *p {
+func (x *elemsection) C(e ...Elem) *elemsection {
 	z := x
 	if x == nil {
-		z = &p{Attrs: map[string]string{}}
+		z = &elemsection{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *p) Id(v string) *p {
+func (x *elemsection) Id(v string) *elemsection {
 	z := x
 	if x == nil {
-		z = &p{Attrs: map[string]string{}}
+		z = &elemsection{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *p) Class(v string) *p {
+func (x *elemsection) Class(v string) *elemsection {
 	z := x
 	if x == nil {
-		z = &p{Attrs: map[string]string{}}
+		z = &elemsection{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type script struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemselect struct {
+	attrs    map[string]string
+	children []Elem
 }
+
+var Select *elemselect
 
-var Script *script
+func (x *elemselect) String() string {
+	return renderElem("select", x.attrs, x.children)
+}
 
-func (x *script) String() string {
-	return renderElem("script", x.Attrs, x.Children)
+func (x *elemselect) C(e ...Elem) *elemselect {
+	z := x
+	if x == nil {
+		z = &elemselect{attrs: map[string]string{}}
+	}
+	z.children = append(z.children, e...)
+	return z
 }
 
-func (x *script) C(e ...Elem) *script {
+func (x *elemselect) Name(v string) *elemselect {
+	z := x
+	if x == nil {
+		z = &elemselect{attrs: map[string]string{}}
+	}
+	z.attrs["name"] = v
+	return z
+}
+func (x *elemselect) Id(v string) *elemselect {
+	z := x
+	if x == nil {
+		z = &elemselect{attrs: map[string]string{}}
+	}
+	z.attrs["id"] = v
+	return z
+}
+func (x *elemselect) Class(v string) *elemselect {
 	z := x
 	if x == nil {
-		z = &script{Attrs: map[string]string{}}
+		z = &elemselect{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.attrs["class"] = v
 	return z
+}
+
+type elemspan struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-func (x *script) Src(v string) *script {
+var Span *elemspan
+
+func (x *elemspan) String() string {
+	return renderElem("span", x.attrs, x.children)
+}
+
+func (x *elemspan) C(e ...Elem) *elemspan {
 	z := x
 	if x == nil {
-		z = &script{Attrs: map[string]string{}}
+		z = &elemspan{attrs: map[string]string{}}
 	}
-	z.Attrs["src"] = v
+	z.children = append(z.children, e...)
 	return z
 }
-func (x *script) Id(v string) *script {
+
+func (x *elemspan) Id(v string) *elemspan {
 	z := x
 	if x == nil {
-		z = &script{Attrs: map[string]string{}}
+		z = &elemspan{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *script) Class(v string) *script {
+func (x *elemspan) Class(v string) *elemspan {
 	z := x
 	if x == nil {
-		z = &script{Attrs: map[string]string{}}
+		z = &elemspan{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type span struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemstyle struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Span *span
+var Style *elemstyle
 
-func (x *span) String() string {
-	return renderElem("span", x.Attrs, x.Children)
+func (x *elemstyle) String() string {
+	return renderElem("style", x.attrs, x.children)
 }
 
-func (x *span) C(e ...Elem) *span {
+func (x *elemstyle) C(e ...Elem) *elemstyle {
 	z := x
 	if x == nil {
-		z = &span{Attrs: map[string]string{}}
+		z = &elemstyle{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *span) Id(v string) *span {
+func (x *elemstyle) Id(v string) *elemstyle {
 	z := x
 	if x == nil {
-		z = &span{Attrs: map[string]string{}}
+		z = &elemstyle{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *span) Class(v string) *span {
+func (x *elemstyle) Class(v string) *elemstyle {
 	z := x
 	if x == nil {
-		z = &span{Attrs: map[string]string{}}
+		z = &elemstyle{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type style struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemsummary struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Style *style
+var Summary *elemsummary
 
-func (x *style) String() string {
-	return renderElem("style", x.Attrs, x.Children)
+func (x *elemsummary) String() string {
+	return renderElem("summary", x.attrs, x.children)
 }
 
-func (x *style) C(e ...Elem) *style {
+func (x *elemsummary) C(e ...Elem) *elemsummary {
 	z := x
 	if x == nil {
-		z = &style{Attrs: map[string]string{}}
+		z = &elemsummary{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *style) Id(v string) *style {
+func (x *elemsummary) Id(v string) *elemsummary {
 	z := x
 	if x == nil {
-		z = &style{Attrs: map[string]string{}}
+		z = &elemsummary{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *style) Class(v string) *style {
+func (x *elemsummary) Class(v string) *elemsummary {
 	z := x
 	if x == nil {
-		z = &style{Attrs: map[string]string{}}
+		z = &elemsummary{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type title struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemtitle struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Title *title
+var Title *elemtitle
 
-func (x *title) String() string {
-	return renderElem("title", x.Attrs, x.Children)
+func (x *elemtitle) String() string {
+	return renderElem("title", x.attrs, x.children)
 }
 
-func (x *title) C(e ...Elem) *title {
+func (x *elemtitle) C(e ...Elem) *elemtitle {
 	z := x
 	if x == nil {
-		z = &title{Attrs: map[string]string{}}
+		z = &elemtitle{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *title) Id(v string) *title {
+func (x *elemtitle) Id(v string) *elemtitle {
 	z := x
 	if x == nil {
-		z = &title{Attrs: map[string]string{}}
+		z = &elemtitle{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *title) Class(v string) *title {
+func (x *elemtitle) Class(v string) *elemtitle {
 	z := x
 	if x == nil {
-		z = &title{Attrs: map[string]string{}}
+		z = &elemtitle{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
 
-type ul struct {
-	Attrs    map[string]string
-	Children []Elem
+type elemul struct {
+	attrs    map[string]string
+	children []Elem
 }
 
-var Ul *ul
+var Ul *elemul
 
-func (x *ul) String() string {
-	return renderElem("ul", x.Attrs, x.Children)
+func (x *elemul) String() string {
+	return renderElem("ul", x.attrs, x.children)
 }
 
-func (x *ul) C(e ...Elem) *ul {
+func (x *elemul) C(e ...Elem) *elemul {
 	z := x
 	if x == nil {
-		z = &ul{Attrs: map[string]string{}}
+		z = &elemul{attrs: map[string]string{}}
 	}
-	z.Children = append(z.Children, e...)
+	z.children = append(z.children, e...)
 	return z
 }
 
-func (x *ul) Id(v string) *ul {
+func (x *elemul) Id(v string) *elemul {
 	z := x
 	if x == nil {
-		z = &ul{Attrs: map[string]string{}}
+		z = &elemul{attrs: map[string]string{}}
 	}
-	z.Attrs["id"] = v
+	z.attrs["id"] = v
 	return z
 }
-func (x *ul) Class(v string) *ul {
+func (x *elemul) Class(v string) *elemul {
 	z := x
 	if x == nil {
-		z = &ul{Attrs: map[string]string{}}
+		z = &elemul{attrs: map[string]string{}}
 	}
-	z.Attrs["class"] = v
+	z.attrs["class"] = v
 	return z
 }
